@@ -1,0 +1,17 @@
+.DS_Store
+.dart_tool/
+
+.packages
+.pub/
+.idea/
+.vscode/
+*.iml
+
+build/
+
+*.jar
+
+example/android/app/release/*./example/ios/.symlinks/plugins/flutter_foreground_plugin
+./example/ios/.symlinks/plugins/flutter_screen_recording
+./example/ios/.symlinks/plugins/permission_handler
+./example/ios/.symlinks/plugins/open_file
