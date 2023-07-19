@@ -161,7 +161,7 @@ class FlutterScreenRecordingPlugin(
 
         // This configuration has to come after setOutputFormat
         if(recordAudio!!) {
-            mMediaRecorder?.setAudioEncoder(MediaRecorder.AudioEncoder.H264);//AAC //HE_AAC
+            mMediaRecorder?.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);//AAC //HE_AAC
             mMediaRecorder?.setAudioEncodingBitRate(16 * 44100);
             mMediaRecorder?.setAudioSamplingRate(44100);
         }
