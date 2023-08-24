@@ -24,7 +24,6 @@ import java.io.File
 import java.io.IOException
 import android.graphics.Point
 
-
 class FlutterScreenRecordingPlugin(
         private val registrar: Registrar
 ) : MethodCallHandler,
@@ -125,25 +124,10 @@ class FlutterScreenRecordingPlugin(
         val screenSize = Point()
         windowManager.defaultDisplay.getRealSize(screenSize); // in pixels
 
-//        val screenRatio: Double = (screenSize.x.toDouble() / screenSize.y.toDouble())
-//
-//        println(screenSize.x.toString() + " --- " + screenSize.y.toString())
-//        var height: Double = mDisplayWidth / screenRatio;
-//        println("height - " + height)
-//
-//        mDisplayHeight = height.toInt()
-
         // Default to the actual screen size, same as on IOS
         mDisplayWidth = width ?: screenSize.x;
         mDisplayHeight = height ?: screenSize.y;
 
-/*        mDisplayWidth = 2560;
-        mDisplayHeight = 1440;*/
-
-//        println("Scaled Density")
-//        //println(metrics.scaledDensity)
-//        println("Original Resolution ")
-        //println(metrics.widthPixels.toString() + " x " + metrics.heightPixels)
         println("Calcule Resolution ")
         println("$mDisplayWidth x $mDisplayHeight")
     }
@@ -153,7 +137,7 @@ class FlutterScreenRecordingPlugin(
 
         // This has to come *before* setOutputFormat
         if (recordAudio!!) {
-            mMediaRecorder?.setAudioSource(MediaRecorder.AudioSource.MIC);
+            mMediaRecorder?.setAudioSource(MediaRecorder.AudioSource.DEFAULT);
         }
 
         //mMediaRecorder?.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)

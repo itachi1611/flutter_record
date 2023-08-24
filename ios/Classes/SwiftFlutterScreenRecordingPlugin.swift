@@ -82,7 +82,7 @@ var myResult: FlutterResult?
 
         //Create the video and audio settings
         if #available(iOS 11.0, *) {
-            recorder.isMicrophoneEnabled = recordAudio
+            recorder.isMicrophoneEnabled = false
             
             let videoSettings: [String : Any] = [
                 AVVideoCodecKey  : AVVideoCodecH264,
@@ -140,9 +140,9 @@ var myResult: FlutterResult?
                                 }
                             }
                         }
-                    case RPSampleBufferType.audioMic:
+                    case RPSampleBufferType.audioApp:
                         if(self.recordAudio){
-//                            print("Writing audio....");
+                            print("Writing audio....");
                             if self.audioInput?.isReadyForMoreMediaData == true {
                                 print("starting audio....");
                                 if self.audioInput?.append(cmSampleBuffer) == false {
@@ -150,6 +150,17 @@ var myResult: FlutterResult?
                                 }
                             }
                         }
+                    case RPSampleBufferType.audioMic:
+                        print("Writing audio....");
+//                        if(self.recordAudio){
+////                            print("Writing audio....");
+//                            if self.audioInput?.isReadyForMoreMediaData == true {
+//                                print("starting audio....");
+//                                if self.audioInput?.append(cmSampleBuffer) == false {
+//                                        print("Problems writing audio")
+//                                }
+//                            }
+//                        }
                     default:
 //                       print("not a video sample, so ignore");
                         break;

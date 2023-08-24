@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-import 'dart:io';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screen_recording/flutter_screen_recording.dart';
